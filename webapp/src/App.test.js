@@ -16,6 +16,6 @@ test('renders NavBar and include About Us', () => {
 
 test('renders App and Check on Graph', () => {
   render(<App />);
-  const linkElement = screen.getByText(/Languages/);
-  expect(linkElement).toBeInTheDocument();
+  const linkElements = screen.getAllByText(/Languages/);
+  expect(linkElements.length).toBeGreaterThanOrEqual(2)
 });
