@@ -5,8 +5,8 @@ export class Home extends Component {
     render() {
         return (
             <div>
-                <h1 className="text-center" >Languages Popularity</h1>
                 <LineChart></LineChart>
+                <h1 className="text-center" >Languages</h1>
             </div>
         )
     }
