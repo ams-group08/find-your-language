@@ -33,7 +33,11 @@ export class LineChart extends Component {
               1: { curveType: 'function' },
               2: { curveType: 'function' },
               3: { curveType: 'function' },
-            },
+            }, animation: {
+              startup: true,
+              easing: 'linear',
+              duration: 1500,
+            }
           }}
           rootProps={{ 'data-testid': '2' }}
         />
