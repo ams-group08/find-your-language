@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import BarChart from './BarChart'
 import LineChart from './LineChart'
 
 export class Home extends Component {
@@ -6,7 +7,7 @@ export class Home extends Component {
         return (
             <div>
                 <LineChart></LineChart>
-                <h1 className="text-center" >Languages</h1>
+                <BarChart/>
             </div>
         )
     }
