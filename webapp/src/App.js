@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
+import Trends from './components/Trends';
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Home/>}></Route>
         <Route exact path="/AboutUs" element={<AboutUs/>}></Route>
+        <Route exact path="/Trends" element={<Trends/>}></Route>
     </Routes>
     <Footer/>
     </Router>

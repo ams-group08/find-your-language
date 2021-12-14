@@ -1,6 +1,6 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import Script from "react-load-script";
+
 
 export default function GoogleTrends({ type, keyword, url }) {
   const handleScriptLoad = _ => {
@@ -13,7 +13,7 @@ export default function GoogleTrends({ type, keyword, url }) {
         property: ""
       },
       {
-        exploreQuery: `q=${encodeURI(keyword)}&geo=US&date=today 12-m`,
+        exploreQuery: `q=${encodeURI(keyword)}&date=today 12-m`,
         guestPath: "https://trends.google.com:443/trends/embed/"
       }
     );
@@ -25,3 +25,5 @@ export default function GoogleTrends({ type, keyword, url }) {
 
   return <div className="googleTrend">{renderGoogleTrend()}</div>;
 }
+
+
