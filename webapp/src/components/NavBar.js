@@ -20,9 +20,9 @@ export class NavBar extends Component {
                                 <li className="nav-item">
                                     <Link className="nav-link" aria-current="page" to="/">Home</Link>
                                 </li>
-                                <li className="nav-item">
+                                {/* <li className="nav-item">
                                     <Link className="nav-link" to="/Trends">Trends</Link>
-                                </li>
+                                </li> */}
                                 <li className="nav-item">
                                     <Link className="nav-link" to="/AboutUs">About Us</Link>
                                 </li>
