@@ -31,3 +31,4 @@ jobs:
           cd webapp
           npm install
           npm test
+          npm run deploy
