@@ -7,7 +7,6 @@ export class Trends extends Component {
         return (
             <div>
                 <div id="widget">
-                    <p>Trends</p>
                     <GoogleTrends
                         type="TIMESERIES"
                         keyword="C#"
@@ -15,17 +14,13 @@ export class Trends extends Component {
                     />
                     <GoogleTrends
                         type="GEO_MAP"
-                        keyword="C++"
+                        keyword="C#"
                         url="https://ssl.gstatic.com/trends_nrtr/2790_RC04/embed_loader.js"
                     />
-
-
                 </div>
             </div>
         )
     }
 }
-
-
 
 export default Trends

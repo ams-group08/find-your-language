@@ -8,7 +8,7 @@ export default function GoogleTrends({ type, keyword, url }) {
       document.getElementById("widget"),
       type,
       {
-        comparisonItem: [{ keyword, geo: "US", time: "today 12-m" }],
+        comparisonItem: [{ keyword, geo: "", time: "today 12-m" }],
         category: 0,
         property: ""
       },
