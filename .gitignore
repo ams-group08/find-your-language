@@ -2,6 +2,8 @@
 
 # dependencies
 webapp/node_modules
+backend/node_modules
+
 webapp/.pnp
 .pnp.js
 
@@ -10,6 +12,7 @@ webapp/coverage
 
 # production
 webapp/build
+backend/build
 
 # misc
 .DS_Store
