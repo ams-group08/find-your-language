@@ -1,5 +1,8 @@
 {
   "homepage": "https://ams-group08.github.io/find-your-language",
+  "HomepageComment": {
+    "start": "use ./ when in production"
+  },
   "name": "webapp",
   "version": "0.1.0",
   "private": true,
