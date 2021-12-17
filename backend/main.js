@@ -16,7 +16,7 @@ app.get('/users', function (req, res) {
 app.get('/googletrends', function (req,res) {
     googleTrends.interestOverTime({keyword: req.query.keyword })
     .then(function(results){
-      res.status(200).json(results);
+      res.status(200).json(JSON.parse(results).default.timelineData);
     })
     .catch(function(err){
       console.error('Oh no there was an error', err);
