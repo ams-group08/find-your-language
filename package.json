@@ -1,0 +1,19 @@
+{
+  "name": "find-your-language",
+  "version": "1.0.0",
+  "description": "Created with *create-react-app*. See the [full create-react-app guide](https://github.com/facebook/create-react-app/blob/main/packages/cra-template/template/README.md).",
+  "main": "index.js",
+  "scripts": {
+    "test": "cd webapp && npm run build && cd ../backend/ && npm start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ams-group08/find-your-language.git"
+  },
+  "author": "Ehab",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ams-group08/find-your-language/issues"
+  },
+  "homepage": "https://github.com/ams-group08/find-your-language#readme"
+}
