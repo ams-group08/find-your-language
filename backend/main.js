@@ -54,29 +54,8 @@ app.get('/readfromcsv', function(req, res) {
     }))
   })
   .on('end', () => {
-    // var res = data.map(function(v) {
-    //   return parseFloat(v, 10);
-    // });
-    //console.log('CSV file successfully processed');
     res.status(200).json({result:data});
   })
 });
-
-
-app.get('/googletrendnew', function (req, res) {
-  res.json({
-    result: [
-      ['x', "C#", "Python", "C", "Ruby"],
-      [2020,0, 0, 0, 0],
-      [2021 ,10, 5, 6, 0],
-      [1922,23, 15, 22, 1],
-      [1932 ,17, 9, 49, 2],
-      [1988 ,18, 10, 15, 4],
-      [1953 ,9, 5, 55, 30],
-      [1966 ,11, 3, 29, 25],
-      [1944,27, 19, 4, 20],
-    ]
-  })
-})
 
 app.listen(3003);
