@@ -3,6 +3,23 @@ import { Chart } from "react-google-charts";
 
 
 export class LineChart extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      chartData: []
+    }
+  }
+
+
+  componentDidMount(){
+    fetch(
+      'http://localhost:3003/readfromcsv'
+    ).then((res) => res.json()).then((res)=> this.setState({
+      chartData: res.result
+    }));
+  }
+
+
   render() {
     return (
       <div>
@@ -11,17 +28,7 @@ export class LineChart extends Component {
           height={'400px'}
           chartType="LineChart"
           loader={<div>Loading Chart</div>}
-          data={[
-            ['x', "C#", "Python", "C", "Ruby"],
-            [0, 0, 0, 0, 0],
-            [1, 10, 5, 6, 0],
-            [2, 23, 15, 22, 1],
-            [3, 17, 9, 49, 2],
-            [4, 18, 10, 15, 4],
-            [5, 9, 5, 55, 30],
-            [6, 11, 3, 29, 25],
-            [7, 27, 19, 4, 20],
-          ]}
+          data={this.state.chartData}
           options={{
             hAxis: {
               title: 'Time',

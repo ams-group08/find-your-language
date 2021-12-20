@@ -2,27 +2,81 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const googleTrends = require('google-trends-api');
+const csv = require('csv-parser');
+const fs = require('fs');
+
+// const HttpsProxyAgent = require('https-proxy-agent');
+// let proxyAgent =  new HttpsProxyAgent('https://localhost:80/');
 
 app.use(express.static(path.join(__dirname, '../webapp/build')))
-app.get('/', function (req, res) {
-    res.sendFile(path.join(__dirname, '../webapp/build', 'index.html'))
+
+app.use(function (req, res, next) {
+  res.header("Access-Control-Allow-Origin", "http://localhost:3001"); // update to match the domain you will make the request from
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
 });
 
-app.get('/users', function (req, res) {
-    console.log("here you go");
-    res.send('here you go')
+app.get('/', function (req, res, next) {
+  res.sendFile(path.join(__dirname, '../webapp/build', 'index.html'))
+});
+
+// TODO - need to figure out how to set up proxy
+app.get('/googletrends', function (req, res, next) {
+  if(req.query.keyword){
+    let query = {
+      keyword: req.query.keyword,
+    }
+    googleTrends.interestOverTime(query)
+      .then(function (results) {
+        res.status(200).json(JSON.parse(results).default.timelineData);
+      })
+      .catch(function (err) {
+        console.error('Oh no there was an error', err);
+      });
+  }else{
+    res.status(201).json({result:"invalid request, please fill the keyword"});
+  }
+
 })
 
-app.get('/googletrends', function (req,res) {
-    googleTrends.interestOverTime({keyword: req.query.keyword })
-    .then(function(results){
-      res.status(200).json(JSON.parse(results).default.timelineData);
-    })
-    .catch(function(err){
-      console.error('Oh no there was an error', err);
-    });
+app.get('/readfromcsv', function(req, res) {
+  const data = [];
+  fs.createReadStream("multiTimeline.csv").pipe(csv())
+  .on('headers', (headers) => {
+    data.push(Object.values(headers))
+    console.log(headers)
+  })
+
+  .on('data', (row) => {
+    console.log(Object.values(row))
+    data.push((Object.values(row)).map((v)=>{
+      return parseFloat(v,2);
+    }))
+  })
+  .on('end', () => {
+    // var res = data.map(function(v) {
+    //   return parseFloat(v, 10);
+    // });
+    //console.log('CSV file successfully processed');
+    res.status(200).json({result:data});
+  })
+});
+
+
+app.get('/googletrendnew', function (req, res) {
+  res.json({
+    result: [
+      ['x', "C#", "Python", "C", "Ruby"],
+      [2020,0, 0, 0, 0],
+      [2021 ,10, 5, 6, 0],
+      [1922,23, 15, 22, 1],
+      [1932 ,17, 9, 49, 2],
+      [1988 ,18, 10, 15, 4],
+      [1953 ,9, 5, 55, 30],
+      [1966 ,11, 3, 29, 25],
+      [1944,27, 19, 4, 20],
+    ]
+  })
 })
-
-
 
 app.listen(3003);

@@ -10,7 +10,9 @@
   "author": "Ehab Omar",
   "license": "MIT",
   "dependencies": {
+    "csv-parser": "^3.0.0",
     "express": "^4.17.1",
-    "google-trends-api": "^4.9.2"
+    "google-trends-api": "^4.9.2",
+    "https-proxy-agent": "^5.0.0"
   }
 }
