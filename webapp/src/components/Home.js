@@ -1,13 +1,14 @@
 import React, { Component } from 'react'
 import BarChart from './BarChart'
 import LineChart from './LineChart'
+import PieChart from './PieChart'
 
 export class Home extends Component {
     render() {
         return (
-            <div>
+            <div className='container center'>
                 <LineChart></LineChart>
-                <BarChart></BarChart>
+                <PieChart></PieChart>
             </div>
         )
     }

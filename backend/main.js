@@ -11,7 +11,7 @@ const fs = require('fs');
 app.use(express.static(path.join(__dirname, '../webapp/build')))
 
 app.use(function (req, res, next) {
-  res.header("Access-Control-Allow-Origin", "http://localhost:3001"); // update to match the domain you will make the request from
+  res.header("Access-Control-Allow-Origin", "http://localhost:3000"); // update to match the domain you will make the request from
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   next();
 });
@@ -44,12 +44,17 @@ app.get('/readfromcsv', function(req, res) {
   fs.createReadStream("multiTimeline.csv").pipe(csv())
   .on('headers', (headers) => {
     data.push(Object.values(headers))
-    console.log(headers)
   })
 
   .on('data', (row) => {
-    console.log(Object.values(row))
+    
     data.push((Object.values(row)).map((v)=>{
+      // if(Object.values(row)[0] === v){
+      //   const t = Object.values(row)[0].split('.');
+      //   //var s = `new Date(${t[0]}, ${t[1]})`
+      //   var s = [t[0],t[1]];
+      //   return s;
+      // }
       return parseFloat(v,2);
     }))
   })
