@@ -23,3 +23,12 @@ Use It
 ---
 
 `npm start`
+
+
+Dev It
+---
+
+`npm run dev`
+
+
+
