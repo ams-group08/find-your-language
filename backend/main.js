@@ -48,14 +48,11 @@ app.get('/readfromcsv', function(req, res) {
 
   .on('data', (row) => {
     
-    data.push((Object.values(row)).map((v)=>{
-      // if(Object.values(row)[0] === v){
-      //   const t = Object.values(row)[0].split('.');
-      //   //var s = `new Date(${t[0]}, ${t[1]})`
-      //   var s = [t[0],t[1]];
-      //   return s;
-      // }
-      return parseFloat(v,2);
+    data.push((Object.values(row)).map((v,i)=>{
+      if(i === 0 ){
+        return parseFloat(Object.values(row)[0]).toFixed(2);
+      }
+      return v;
     }))
   })
   .on('end', () => {

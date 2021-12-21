@@ -11,36 +11,43 @@ export class LineChart extends Component {
   }
 
 
+  //TODO - chnage formate 
+  //https://developers.google.com/chart/interactive/docs/datesandtimes
+
   componentDidMount() {
     fetch(
       'http://localhost:3003/readfromcsv'
     ).then((res) => res.json()).then((res) => {
-      var filtered = res.result.map((t) => {
-        t.map((y, i) => {
-          if (i === 0 && y !== 'x') {
-            const d = y.toString().split('.')
-            return new Date(d[0], d[1])
-          }
-          return y
-        })
-        return t
+      var filtered = [];
+      var index = 0
+      res.result.forEach(element => {
+        if(index !== 0){
+          filtered.push(element.map((y, i) => {
+            if (i === 0) {
+              const d = y.toString().split('.')
+              return new Date(d[0], d[1])
+            }
+            return parseInt(y);
+          }))
+        }else{
+
+          element[0] = { type: 'date', label: 'Day' }
+          filtered.push(element)
+        }
+        
+        index++
       })
-      console.log(filtered)
       this.setState({
         chartData: filtered
       })
     })
-
-
-
   }
-
 
   render() {
     return (
       <div>
         <Chart
-          width={Window.innerWidth}
+          width={Window.width}
           height={'400px'}
           chartType="LineChart"
           loader={<div>Loading Chart</div>}
@@ -48,10 +55,15 @@ export class LineChart extends Component {
           options={{
             hAxis: {
               title: 'Year',
+              format: 'yyyy',
+              formatType: 'short'
             },
             vAxis: {
               title: 'Popularity',
             },
+            explorer: {axis: 'horizontal',
+            keepInBounds: true
+          },
             series: {
               1: { curveType: 'function' },
               2: { curveType: 'function' },
