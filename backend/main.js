@@ -5,6 +5,8 @@ const path = require('path');
 const googleTrends = require('google-trends-api');
 const csv = require('csv-parser');
 const fs = require('fs');
+const cors = require("cors");
+
 
 // const HttpsProxyAgent = require('https-proxy-agent');
 // let proxyAgent =  new HttpsProxyAgent('https://localhost:80/');
@@ -13,6 +15,7 @@ app.use(express.static(path.join(__dirname, '../webapp/build')))
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, '../webapp/build', 'index.html'))
 });
+app.use(cors())
 
 
 
