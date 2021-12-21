@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import BarChart from './BarChart'
 import LineChart from './LineChart'
 import PieChart from './PieChart'
 

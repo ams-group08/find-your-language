@@ -19,12 +19,6 @@ Install It
 `npm install`
 
 
-Use It
----
-
-`npm start`
-
-
 Dev It
 ---
 
