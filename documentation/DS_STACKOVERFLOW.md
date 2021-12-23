@@ -1,4 +1,4 @@
-# Future Techies (data science)
+# Future Techies (datascience)
 Our project uses data from various tech conglomerates to ascertain the popularity of programming languages throughout history. Our goal is to be able to obtain enough data to see the changes in popularity and be able to put the data to use in easy-to-understand graphs and charts. This information will be a wonderful tool for individuals that would be looking at the tech industry, giving them an idea of what language would be optimal to learn.
 
 Each member of the data science team is working with a different public data source. Cande will be looking at Stack Overflow, Srikar at Reddit, and Nadine at Github. The popularity is simply defined as how many times a coding language was mentioned in questions, practical works, posts, or repos, this depending on the website. We are also willing to be able to filter that in terms of stars, views, upvotes, answers, and times a repo is forked.
@@ -25,7 +25,7 @@ import os                         # to interact with the operating system
 
 A list of the different steps regarding the web scraping process is detailed below.
 
-#### Get the HTML document tree
+#### 1. Get the HTML document tree
 
 ```python
 stackof_url = 'https://stackoverflow.com/questions/tagged/' + coding_language + '?page='
@@ -36,7 +36,7 @@ print(soup.prettify())
 The Stack OverFlow URL consists of a three-element concatenation in order to be able later to scrap through an array of coding languages and their vast number of pages.
 As a result of this piece of code, we are able to read in a 'pretty' way the whole Html document tree from the page and recognize the useful lines in terms of our goals. We complement this with the 'inspect' tool in the browser. 
 
-#### Get the raw data
+#### 2. Get the raw data
 For each topic, Stack OverFlow displays a list with a maximum of 50 questions per page. We define a 'containers' as the table which contains all those questions. We are willing to extract the date, views, answers, and votes from each question in that table, which will be 'container in containers.
 
 ```python
@@ -58,7 +58,7 @@ for container in containers:
 
 ``` 
 
-#### Clean the raw data
+#### 3. Clean the raw data
 The following answer is derived as we run the previous code:
 
 ```python
@@ -106,7 +106,7 @@ votes = votes_container[0].text
 
 >> 0 
 ```
-### Limit the iterations
+### 4. Limit the iterations
 We can limit the number of iterations using a while loop. We run the for-in cycle as long as two conditions result true: the scraping should not go beyond the year 2017 and it must end at the maximum page for that coding language, while it is included in the year range 2017–2021.
 We define `min_year`, `current_year` and `current_page` with the values 2017, 2021 and 1 respectivly.
 The maximum number of pages is obtained through web scraping. And we write the code in a try/except block to be sure it won't blow as it tries to continue beyond the maximum number of pages of any particular coding language. In each iteration, the current page adds one unit. The for-in cycle will start at page number 1, it will go through page number two and it will end at the maximum number of pages.
@@ -159,7 +159,7 @@ while current_year >= min_year and current_page <= max_page:
 current_page += 1 
 current_year =int(soup.findAll('span', {'class':'relativetime'})[-1]['title'][0:4])
 ```
-### Scraping trought a list of coding languages
+### 5. Scraping trought a list of coding languages
 In order to repeat the previously detailed process in each of the desired coning languages, we create a list of elements named `coding_languages`, and using a for/in cycle we extract the date, views, answers, and votes from each question of every coding language.
 
 ```python
@@ -209,11 +209,9 @@ for coding_language in coding_languages:
       current_year =int(soup.findAll('span', {'class':'relativetime'})[-1]['title'][0:4])
 ``` 
 
-### Create a csv file
-In order to visualize the desired data in a data frame, we create a csv document with five columns. We are going to stock in the new file the name of the coding language, the date, the views, the answers, and the votes from each scraped question.
-We add an if clause that adds the column names when the document starts from scratch
-Hola maychi como e
-Each row is added to the file with the .write method. We include this line in the if clause that only prints and adds data between 2017 and 2021 (see 'Limit the iterations').   
+### 6. Create a csv file
+In order to visualize the desired data in a data frame, we create a csv document. When we first run the code, the size of the document will be 0, the condition in the if-clause, if os.stat(filename).st_size == 0, will be true, so the column names will be added with the .write method. As we run the script several times, new data will be appended to the original one without duplicating the column names.
+Each time the for/in cycle runs, we are going to stock in the new file the name of the coding language, the date, the views, the answers, and the votes from each scraped question. Each row is added to the file with the .write method. We include this line in the if clause that only prints and adds data between 2017 and 2021 (see 'Limit the iterations'). 
 
 ```python
 filename = 'codinglanguages.csv'
@@ -223,17 +221,7 @@ file = open(filename,'a')
     file.write(columns_names)
 ```
 
-### Read a csv file
-In order to read the created csv file, we use the .read function in Pandas. With the print statements, we can get general information about the data frame such as the first and last records, its shape, the name of the columns, and data type.
-```python
-df_coding_languages = pd.read_csv('codinglanguages01.csv')
-print(df_coding_languages)
-print(df_coding_languages.shape)
-print(df_coding_languages.columns)
-print(df_coding_languages.info())
-``` 
-
-### Define a function
+### 7. Define a function
 Last but not least we include all the previous items in the defined function scrap_sof().
 
 ```python
@@ -242,9 +230,10 @@ coding_languages = ['javascript', 'java', 'python','c#', 'kotlin', 'typescript',
 def scrap_sof():
 
   filename = 'codinglanguages.csv'
-  f = open(filename,'w')
-  columns_names = 'Coding_Languages, Date, Views, Answers, Votes\n'        
-  f.write(columns_names)
+  file = open(filename,'a')
+  if os.stat(filename).st_size == 0 :
+    columns_names = 'Coding_Languages, Date, Views, Answers, Votes\n'        
+    file.write(columns_names)
 
   for coding_language in coding_languages:
     
@@ -285,13 +274,19 @@ def scrap_sof():
 
           if (int(date[0:4]) >= min_year): 
             print(coding_language + ' , ' + date + ' , ' + views + ' , ' + answers + ' , ' + votes +'\n')
-            f.write(coding_language + ' , ' + date + ' , ' + views + ' , ' + answers + ' , ' + votes +'\n')
+            file.write(coding_language + ' , ' + date + ' , ' + views + ' , ' + answers + ' , ' + votes +'\n')
          
       current_page += 1 
       current_year =int(soup.findAll('span', {'class':'relativetime'})[-1]['title'][0:4])
-      time.sleep(10) # sleep before scraping next page to not send too many requests at once          
+      time.sleep(5) # sleep before scraping next page to not send too many requests at once    
 ```
 
-### Miscellaneous
-
-      time.sleep(10) # sleep before scraping next page to not send too many requests at once  
+### 8. Read a csv file
+In order to read the created csv file, we use the .read function in Pandas. With the print statements, we can get general information about the data frame such as the first and last records, its shape, the name of the columns, and data type.
+```python
+df_coding_languages = pd.read_csv('codinglanguages.csv')
+print(df_coding_languages)
+print(df_coding_languages.shape)
+print(df_coding_languages.columns)
+print(df_coding_languages.info())
+``` 
