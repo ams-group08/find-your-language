@@ -25,7 +25,7 @@ import os                         # to interact with the operating system
 
 A list of the different steps regarding the web scraping process is detailed below.
 
-#### 1. Get the HTML document tree
+### 1. Get the HTML document tree
 
 ```python
 stackof_url = 'https://stackoverflow.com/questions/tagged/' + coding_language + '?page='
@@ -36,7 +36,7 @@ print(soup.prettify())
 The Stack OverFlow URL consists of a three-element concatenation in order to be able later to scrap through an array of coding languages and their vast number of pages.
 As a result of this piece of code, we are able to read in a 'pretty' way the whole Html document tree from the page and recognize the useful lines in terms of our goals. We complement this with the 'inspect' tool in the browser. 
 
-#### 2. Get the raw data
+### 2. Get the raw data
 For each topic, Stack OverFlow displays a list with a maximum of 50 questions per page. We define a 'containers' as the table which contains all those questions. We are willing to extract the date, views, answers, and votes from each question in that table, which will be 'container in containers.
 
 ```python
@@ -58,7 +58,7 @@ for container in containers:
 
 ``` 
 
-#### 3. Clean the raw data
+### 3. Clean the raw data
 The following answer is derived as we run the previous code:
 
 ```python
