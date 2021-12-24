@@ -3,18 +3,30 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31919.166
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "find-your-language", "find-your-language\find-your-language.csproj", "{CC043F82-D850-4AC4-A247-8AA4C3CD015F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "find-your-language", "find-your-language\find-your-language.csproj", "{CC043F82-D850-4AC4-A247-8AA4C3CD015F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		production|Any CPU = production|Any CPU
+		production|x64 = production|x64
 		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{CC043F82-D850-4AC4-A247-8AA4C3CD015F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{CC043F82-D850-4AC4-A247-8AA4C3CD015F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC043F82-D850-4AC4-A247-8AA4C3CD015F}.Debug|x64.ActiveCfg = Debug|x64
+		{CC043F82-D850-4AC4-A247-8AA4C3CD015F}.Debug|x64.Build.0 = Debug|x64
+		{CC043F82-D850-4AC4-A247-8AA4C3CD015F}.production|Any CPU.ActiveCfg = Release|x64
+		{CC043F82-D850-4AC4-A247-8AA4C3CD015F}.production|Any CPU.Build.0 = Release|x64
+		{CC043F82-D850-4AC4-A247-8AA4C3CD015F}.production|x64.ActiveCfg = production|x64
+		{CC043F82-D850-4AC4-A247-8AA4C3CD015F}.production|x64.Build.0 = production|x64
 		{CC043F82-D850-4AC4-A247-8AA4C3CD015F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CC043F82-D850-4AC4-A247-8AA4C3CD015F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC043F82-D850-4AC4-A247-8AA4C3CD015F}.Release|x64.ActiveCfg = Release|x64
+		{CC043F82-D850-4AC4-A247-8AA4C3CD015F}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
