@@ -60,3 +60,5 @@ items = response_dict['items']
 ### 4. Cleaning the data and analysis
 
 These steps were carried out in a Google CoLab notebook with accompanying annotations.
+
+### 5. Summary of results for GitHub API
