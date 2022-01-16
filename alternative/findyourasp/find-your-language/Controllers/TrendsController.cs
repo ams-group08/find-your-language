@@ -14,7 +14,7 @@ namespace find_your_language.Controllers
 
         private ILogger m_Logger;
         private ICsvProccesor m_CsvProccesor;
-        private string m_DataFile = Directory.GetCurrentDirectory() +  @"..\..\..\..\backend\multiTimeline.csv";
+        private string m_DataFile = Directory.GetCurrentDirectory() + @"\Resources\multiTimeline.csv";
 
         public TrendsController(ILogger<TrendsController> Logger, ICsvProccesor csvProccesor )
         {

@@ -11,8 +11,8 @@ export class LineChart extends Component {
     }
 
 
-    //TODO - change formate 
-    //https://developers.google.com/chart/interactive/docs/datesandtimes
+    // TODO - change formate 
+    // https://developers.google.com/chart/interactive/docs/datesandtimes
 
     componentDidMount() {
         fetch(
