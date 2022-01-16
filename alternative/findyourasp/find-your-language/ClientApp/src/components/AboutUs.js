@@ -1,4 +1,4 @@
-﻿import React, { Component } from 'react'
+import React, { Component } from 'react'
 import Contributors from './Contributors'
 
 export class AboutUs extends Component {
@@ -39,4 +39,3 @@ export class AboutUs extends Component {
 }
 
 export default AboutUs
-
