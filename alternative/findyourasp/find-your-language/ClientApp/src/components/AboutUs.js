@@ -9,7 +9,7 @@ export class AboutUs extends Component {
                     <br />
                     <h1 className="display-5 text p-1 m-2  d-flex justify-content-center" >Project Purpose </h1>
                     <br />
-                    <div className="card border-dark p-4 m-2">
+                    <div className="card border p-4 m-2">
                         <div className="card-body">
                             <h6>Summary</h6>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>

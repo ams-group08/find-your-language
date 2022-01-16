@@ -7,7 +7,7 @@ import DarkModeToggleButton from './DarkModeToggleButton';
 export class NavMenu extends Component {
   static displayName = NavMenu.name;
 
-  constructor (props) {
+  constructor(props) {
     super(props);
 
     this.toggleNavbar = this.toggleNavbar.bind(this);
@@ -16,23 +16,23 @@ export class NavMenu extends Component {
     };
   }
 
-  toggleNavbar () {
+  toggleNavbar() {
     this.setState({
       collapsed: !this.state.collapsed
     });
   }
 
-  render () {
+  render() {
     return (
       <header>
-        <Navbar className="navbar-expand-sm navbar-toggleable-sm border-bottom box-shadow mb-3">
+        <Navbar className="navbar-expand-sm navbar-toggleable-sm ng border-bottom box-shadow mb-3">
           <Container>
             <NavbarBrand tag={Link} to="/">find your language</NavbarBrand>
-            <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
+            <NavbarToggler onClick={this.toggleNavbar} className="mr-2">#</NavbarToggler>
             <Collapse className="d-sm-inline-flex flex-sm-row-reverse" isOpen={!this.state.collapsed} navbar>
               <ul className="navbar-nav flex-grow">
                 <NavItem>
-                <DarkModeToggleButton></DarkModeToggleButton>
+                  <DarkModeToggleButton></DarkModeToggleButton>
                 </NavItem>
                 <NavItem>
                   <NavLink tag={Link} className="text" to="/">Home</NavLink>

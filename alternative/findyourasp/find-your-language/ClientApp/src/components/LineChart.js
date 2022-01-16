@@ -45,7 +45,7 @@ export class LineChart extends Component {
 
     render() {
         return (
-            <div>
+            <div className='border'>
                 <Chart
                     width={Window.width}
                     height={'400px'}
@@ -72,9 +72,11 @@ export class LineChart extends Component {
                         }, animation: {
                             startup: true,
                             easing: 'linear',
-                            duration: 1500,
+                            duration: 1500
+                        },
+                        backgroundColor: "#3EABF4",
                         }
-                    }}
+                    }
                     rootProps={{ 'data-testid': '2' }}
                 />
             </div>

@@ -22,7 +22,9 @@ export class PieChart extends Component {
                         title: 'Programming Languages',
                         // Just add this option
                         is3D: true,
-                    }}
+                        backgroundColor: "#3EABF4"
+                    }
+                    }
                     rootProps={{ 'data-testid': '2' }}
                 />
             </div>

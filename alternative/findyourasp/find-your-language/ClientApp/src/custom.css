@@ -60,3 +60,15 @@ body.dark-mode {
   background-color: #111 !important;
   color: #eee;
 }
+
+
+[data-theme="dark"] .navbar-expand {
+  background-color: #111 !important;
+  color: #eee;
+}
+
+[data-theme="dark"] .mr-2 {
+  background-color: #111 !important;
+  color: #eee;
+}
+
