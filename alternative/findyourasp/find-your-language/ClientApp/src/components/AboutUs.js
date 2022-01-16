@@ -7,7 +7,7 @@ export class AboutUs extends Component {
             <div className="row justify-content-center">
                 <div className="col-6">
                     <br />
-                    <h1 className="display-5 text-danger p-1 m-2  d-flex justify-content-center" >Project Purpose </h1>
+                    <h1 className="display-5 text p-1 m-2  d-flex justify-content-center" >Project Purpose </h1>
                     <br />
                     <div className="card border-dark p-4 m-2">
                         <div className="card-body">
@@ -24,7 +24,7 @@ export class AboutUs extends Component {
                 </div>
                 <div className="col-1"></div>
                 <div className="col-4">
-                    <h1 className="display-6 text-danger m-3 p-2 d-flex justify-content-center" >Contributors</h1>
+                    <h1 className="display-6 text m-3 p-2 d-flex justify-content-center" >Contributors</h1>
                     <br />
                     <Contributors title="Fullstack" name="Ehab Omar"></Contributors>
                     <Contributors title="Data Science" name="Cande Funes" ></Contributors>

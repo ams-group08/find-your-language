@@ -25,7 +25,7 @@ export class NavMenu extends Component {
   render () {
     return (
       <header>
-        <Navbar className="navbar-expand-sm navbar-toggleable-sm ng-white border-bottom box-shadow mb-3" light>
+        <Navbar className="navbar-expand-sm navbar-toggleable-sm border-bottom box-shadow mb-3">
           <Container>
             <NavbarBrand tag={Link} to="/">find your language</NavbarBrand>
             <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
@@ -35,13 +35,13 @@ export class NavMenu extends Component {
                 <DarkModeToggleButton></DarkModeToggleButton>
                 </NavItem>
                 <NavItem>
-                  <NavLink tag={Link} className="text-dark" to="/">Home</NavLink>
+                  <NavLink tag={Link} className="text" to="/">Home</NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink tag={Link} className="text-dark" to="/trends">Trends</NavLink>
+                  <NavLink tag={Link} className="text" to="/trends">Trends</NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink tag={Link} className="text-dark" to="/aboutus">About Us</NavLink>
+                  <NavLink tag={Link} className="text" to="/aboutus">About Us</NavLink>
                 </NavItem>
               </ul>
             </Collapse>
