@@ -15,6 +15,7 @@ namespace find_your_language.Controllers
         private ILogger m_Logger;
         private ICsvProccesor m_CsvProccesor;
         private string m_DataFile = Directory.GetCurrentDirectory() + @"\Resources\multiTimeline.csv";
+        private string m_DataFile_StackOverflow = Directory.GetCurrentDirectory() + @"\Resources\Date_year_month_sof.csv";
 
         public TrendsController(ILogger<TrendsController> Logger, ICsvProccesor csvProccesor )
         {
@@ -31,6 +32,17 @@ namespace find_your_language.Controllers
             var result = m_CsvProccesor.Reader(m_DataFile);     
             return result.PreprateForFrontEnd();
         }
+
+        // GET: api/<TrendsController>
+        [HttpGet("stackoverflow")]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public Result GetStackOverflow()
+        {
+            var result = m_CsvProccesor.Reader(m_DataFile_StackOverflow);
+            return result.PreprateForFrontEnd();
+        }
+
 
         // GET api/<TrendsController>/5
         [HttpGet("{id}")]

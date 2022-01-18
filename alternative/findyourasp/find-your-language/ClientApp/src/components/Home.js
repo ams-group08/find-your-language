@@ -8,7 +8,8 @@ export class Home extends Component {
   render () {
     return (
       <div>
-            <LineChart></LineChart>
+            <LineChart call = "trends/stackoverflow" source = "Stackoverflow"></LineChart>
+            <LineChart call = "trends/googledata" source = "Google Trends"></LineChart>
             <PieChart></PieChart>
       </div>
     );

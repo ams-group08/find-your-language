@@ -16,7 +16,7 @@ export class LineChart extends Component {
 
     componentDidMount() {
         fetch(
-            'trends/googledata'
+            this.props.call
         ).then((res) => res.json()).then((res) => {
             var filtered = [];
             var index = 0
@@ -75,6 +75,7 @@ export class LineChart extends Component {
                             duration: 1500
                         },
                         backgroundColor: "#3EABF4",
+                        title: 'Programming Languages - ' + this.props.source
                         }
                     }
                     rootProps={{ 'data-testid': '2' }}
