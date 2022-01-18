@@ -30,6 +30,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="Resources\Date_year_month_sof.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Resources\multiTimeline.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
