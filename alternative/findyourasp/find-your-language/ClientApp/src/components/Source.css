@@ -1,0 +1,11 @@
+img{
+    width: 5%;
+    height: 10vw;
+    object-fit:scale-down;
+  opacity: 0.8;
+}
+
+.post{
+    overflow: hidden;
+
+}
