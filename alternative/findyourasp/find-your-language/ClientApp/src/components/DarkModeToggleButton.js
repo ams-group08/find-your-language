@@ -4,7 +4,7 @@ import useDarkMode from 'use-dark-mode';
 export default function DarkModeToggleButton() {
     const darkMode = useDarkMode(false);
     const toggle = ()=>{
-        darkMode.value === true ? document.body.removeAttribute("data-theme") : document.body.setAttribute("data-theme", "dark");
+        darkMode.value === true ? document.body.setAttribute("data-theme","light") : document.body.setAttribute("data-theme", "dark");
         darkMode.toggle();
     }
     return (

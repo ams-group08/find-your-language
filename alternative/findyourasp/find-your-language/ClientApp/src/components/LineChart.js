@@ -1,12 +1,14 @@
 import React, { Component } from 'react'
 import { Chart } from "react-google-charts";
+import './LineChart.css'
 
 
 export class LineChart extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            chartData: []
+            chartData: [],
+            color:"#fff"
         }
     }
 
@@ -46,20 +48,33 @@ export class LineChart extends Component {
     render() {
         return (
             <div className='border m-2'>
-                <Chart
+                <Chart className='graph'
                     width={Window.width}
                     height={'400px'}
                     chartType="LineChart"
                     loader={<div>Loading Chart</div>}
                     data={this.state.chartData}
                     options={{
+                        lineWidth: 4,
                         hAxis: {
                             title: 'Year',
                             format: 'yyyy',
-                            formatType: 'short'
+                            formatType: 'short',
+                            textStyle: {
+                                color:"#3F7FBF",
+                            },
+                            titleTextStyle: {
+                                color:"#3F7FBF",
+                            }, 
                         },
                         vAxis: {
                             title: 'Popularity',
+                            textStyle: {
+                                color:"#3F7FBF",
+                            },
+                            titleTextStyle: {
+                                color:"#3F7FBF",
+                            },
                         },
                         explorer: {
                             axis: 'horizontal',
@@ -74,9 +89,18 @@ export class LineChart extends Component {
                             easing: 'linear',
                             duration: 1500
                         },
-                        backgroundColor: "#3EABF4",
-                        title: 'Programming Languages - ' + this.props.source
+                        backgroundColor: getComputedStyle(document.documentElement).getPropertyValue('--color-primary'),
+                        title: 'Programming Languages - ' + this.props.source,
+                        titleTextStyle: {
+                            color:"#3F7FBF",
+                        },
+                        legend:{
+                            textStyle: {
+                                color:"#3F7FBF",
+                            },
                         }
+                        }
+                        
                     }
                     rootProps={{ 'data-testid': '2' }}
                 />
