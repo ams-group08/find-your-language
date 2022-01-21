@@ -1,4 +1,3 @@
-import { map } from 'jquery';
 import React, { Component } from 'react';
 import Language from './Language';
 export class LanguageList extends Component {
