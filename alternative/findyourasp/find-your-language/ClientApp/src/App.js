@@ -10,6 +10,7 @@ import GraphGithub from './components/GraphGithub';
 import GraphReddit from './components/GraphReddit';
 import GraphStackoverflow from './components/GraphStackoverflow';
 import GraphGoogleTrend from './components/GraphGoogleTrend';
+import Graphs from './components/Graphs';
 
 export default class App extends Component {
   static displayName = App.name;
@@ -24,6 +25,8 @@ export default class App extends Component {
             <Route path='/graph/stackoverflow' component={GraphStackoverflow} />
             <Route path='/graph/reddit' component={GraphReddit} />
             <Route path='/graph/GoogleTrends' component={GraphGoogleTrend} />
+            <Route path='/graphs' component={Graphs} />
+
       </Layout>
     );
   }

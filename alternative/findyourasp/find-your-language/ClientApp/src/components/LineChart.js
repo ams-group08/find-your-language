@@ -45,7 +45,7 @@ export class LineChart extends Component {
 
     render() {
         return (
-            <div className='border'>
+            <div className='border m-2'>
                 <Chart
                     width={Window.width}
                     height={'400px'}
