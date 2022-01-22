@@ -5,6 +5,15 @@ import SeeOurDocument from './SeeOurDocument';
 import Sources from './Sources';
 
 export class GraphStackoverflow extends Component {
+    scrollToTop() {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth"
+        });
+      }
+    componentDidMount(){
+      this.scrollToTop()
+    }
     render() {
         return <div>
             <div className="row justify-content-left">
