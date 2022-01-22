@@ -5,11 +5,10 @@ export class Graphs extends Component {
     render() {
         return <div>
 
-            <LineChart call="trends/googledata" source="Google Trends"></LineChart>
-            <LineChart call="trends/googledata" source="Google Trends"></LineChart>
-            <LineChart call="trends/stackoverflow" source="Github"></LineChart>
-            <LineChart call="trends/stackoverflow" source="Reddit"></LineChart>
-            <LineChart call="trends/stackoverflow" source="Stackoverflow"></LineChart>
+            <LineChart call="trends/googledata" source="Google Trends" vaxistitle="Popularity"></LineChart>
+            <LineChart call="trends/stackoverflow" source="Stackoverflow" vaxistitle="Popularity"></LineChart>
+            <LineChart call="trends/github" source="Github" vaxistitle="Percentage"></LineChart>
+            <LineChart call="trends/stackoverflow" source="Reddit" vaxistitle="Popularity"></LineChart>
         </div>;
     }
 }

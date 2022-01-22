@@ -25,7 +25,7 @@ export class GraphStackoverflow extends Component {
                     <p className='text'>Web scraping, web harvesting, or web data extraction is data scraping used for extracting data from websites for later retrieval or analysis.[3] It uses software to extract all the information available from the targeted site by simulating human behavior.[4] This process can be done manually by a software user, using a bot or web crawler, or in this case, writing a script with different Python tools to make the scraping almost automatically.[3] Within the different methods to scrap data, Beautiful Soup was implemented. This is a Python library that is used for web scraping purposes to pull the data out of HTML and XML files. It creates a parse tree from page source code that can be used to extract data in a hierarchical and more readable manner.[5]</p>
                     <SeeOurDocument link="https://github.com/ams-group08/find-your-language/blob/main/documentation/DS_STACKOVERFLOW.md"></SeeOurDocument>
                     <br></br>
-                    <LineChart call="trends/stackoverflow" source="Stackoverflow"></LineChart>
+                    <LineChart call="trends/stackoverflow" source="Stackoverflow" vaxistitle="Popularity"></LineChart>
                 </div>
                 <br />
                 <div className="col-2">

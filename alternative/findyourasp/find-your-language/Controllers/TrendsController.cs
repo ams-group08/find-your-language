@@ -16,6 +16,7 @@ namespace find_your_language.Controllers
         private ICsvProccesor m_CsvProccesor;
         private string m_DataFile = Directory.GetCurrentDirectory() + @"\Resources\multiTimeline.csv";
         private string m_DataFile_StackOverflow = Directory.GetCurrentDirectory() + @"\Resources\Date_year_month_sof.csv";
+        private string m_DataFile_Github = Directory.GetCurrentDirectory() + @"\Resources\github_language_popularity_year_month.csv";
 
         public TrendsController(ILogger<TrendsController> Logger, ICsvProccesor csvProccesor )
         {
@@ -40,6 +41,16 @@ namespace find_your_language.Controllers
         public Result GetStackOverflow()
         {
             var result = m_CsvProccesor.Reader(m_DataFile_StackOverflow);
+            return result.PreprateForFrontEnd();
+        }
+
+        // GET: api/<TrendsController>
+        [HttpGet("github")]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public Result GetGithub()
+        {
+            var result = m_CsvProccesor.Reader(m_DataFile_Github);
             return result.PreprateForFrontEnd();
         }
 

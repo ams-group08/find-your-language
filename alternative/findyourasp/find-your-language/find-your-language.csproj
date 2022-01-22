@@ -33,6 +33,9 @@
     <None Update="Resources\Date_year_month_sof.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Resources\github_language_popularity_year_month.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Resources\multiTimeline.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

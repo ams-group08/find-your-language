@@ -23,7 +23,7 @@ export class GraphGithub extends Component {
                     <p className='text'>Professional and hobby developers use Github as a repository for their code. By looking at how the languages of interest are used in public projects it should be possible to provide a measure of how popular these languages are in real-world applications.</p>
                     <SeeOurDocument link="https://github.com/ams-group08/find-your-language/blob/main/documentation/GITHUB.md"></SeeOurDocument>
                     <br></br>
-                    <LineChart call="trends/stackoverflow" source="Github"></LineChart>
+                    <LineChart call="trends/github" source="Github" vaxistitle="Percentage" ></LineChart>
                 </div>
                 <br />
                 <div className="col-2">

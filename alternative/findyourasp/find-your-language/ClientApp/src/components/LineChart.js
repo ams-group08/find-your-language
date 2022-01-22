@@ -68,7 +68,7 @@ export class LineChart extends Component {
                             }, 
                         },
                         vAxis: {
-                            title: 'Popularity',
+                            title: this.props.vaxistitle,
                             textStyle: {
                                 color:"#3F7FBF",
                             },
