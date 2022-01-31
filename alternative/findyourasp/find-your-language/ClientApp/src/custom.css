@@ -80,3 +80,8 @@ body.dark-mode {
   background-color: lightseagreen !important;
   color: #eee;
 }
+
+.click:hover{
+  background: #686868 !important;
+  color: lightblue !important;
+}

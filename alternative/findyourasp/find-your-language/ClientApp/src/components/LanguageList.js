@@ -1,18 +1,17 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Language from './Language';
-export class LanguageList extends Component {
 
-    populateLanages = () => {
-        const itemslist = this.props.list.map((item,i)=> 
-            <Language name={item} index={i}></Language>
+
+export default function LanguageList(props) {
+   
+    const populateLanages = () => {
+        const itemslist = props.list.map((item, i) =>
+            <Language name={item} index={i} key={i} ></Language>
         )
         return (itemslist)
     }
-    render() {
         return <div>
-            {this.populateLanages()}
+            {populateLanages()}
         </div>;
-    }
+    
 }
-
-export default LanguageList;
