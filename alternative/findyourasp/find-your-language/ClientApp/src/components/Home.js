@@ -6,7 +6,7 @@ export class Home extends Component {
   static displayName = Home.name;
 
   render() {
-    const languageList = ['javascript', 'java', 'python', 'typescript', 'c', 'c#', 'c++', 'kotlin', 'swift', 'php'];
+    const languageList = ['Javascript', 'Java', 'Python', 'Typescript', 'C', 'Csharp', 'C++', 'Kotlin', 'Swift', 'Php'];
 
     return (
       <div>
