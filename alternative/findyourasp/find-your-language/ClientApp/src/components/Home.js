@@ -6,7 +6,8 @@ export class Home extends Component {
   static displayName = Home.name;
 
   render() {
-    const languageList = ['Javascript', 'Java', 'Python', 'Typescript', 'C', 'Csharp', 'C++', 'Kotlin', 'Swift', 'Php'];
+    const languageList = ['Javascript', 'Java', 'Python', 'Typescript', 'C', 'C#', 'C++', 'Kotlin', 'Swift', 'Php'];
+    const languageImagesList = ['Javascript', 'Java', 'Python', 'Typescript', 'C', 'Csharp', 'cplus', 'Kotlin', 'Swift', 'Php'];
 
     return (
       <div>
@@ -18,7 +19,7 @@ export class Home extends Component {
             <h1 className="display-5 text p-1 m-2  d-flex justify-content-center" >Top 10  Languages</h1>
             <br />
             <div className="container border p-3 m-1">
-              <LanguageList list={languageList} ></LanguageList>
+              <LanguageList list={languageList} imageList ={languageImagesList} ></LanguageList>
             </div>
             <br />
             <p></p>

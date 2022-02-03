@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardImg, CardBody } from 'reactstrap';
+import { Card, CardImg } from 'reactstrap';
 import { useState } from "react";
 import { useSpring, animated } from "react-spring";
 
@@ -26,14 +26,14 @@ export default function Language(props) {
         <div className="col-3">
           <CardImg
             alt="Card image cap"
-            src={require(`../Resources/${props.name.toLowerCase()}.png`).default}
+            src={require(`../Resources/${props.imagename.toLowerCase()}.png`).default}
             width="100%"
           />
         </div>
         <div className="col">
-          <CardBody className='display-6 m-3 p-2 d-flex justify-content-center'>
-            {props.index + 1}. {props.name}
-          </CardBody>
+          <br></br>
+           <h1  className=' text-center m-1 d-flex justify-content-center' >{props.index + 1}. {props.name}</h1> 
+           <br></br>
         </div>
       </div>
     </Card>

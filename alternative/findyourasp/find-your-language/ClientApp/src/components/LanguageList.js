@@ -6,7 +6,8 @@ export default function LanguageList(props) {
    
     const populateLanages = () => {
         const itemslist = props.list.map((item, i) =>
-            <Language name={item} index={i} key={i} ></Language>
+            <Language name={item} index={i} key={i} imagename= {props.imageList[i]}
+            ></Language>
         )
         return (itemslist)
     }
