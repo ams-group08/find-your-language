@@ -7,7 +7,7 @@ The coding languages, which were selected to do the analyses are Python, JavaScr
 Through this project, we are covering the following topics from the data science track: Python, Pandas, RegEx, Numpy, Seaborn, and Matplotlib. In order to acquire the raw data, we will be using some tools and libraries which were not covered in the study track including, Web Scraping, Request, BeatifulSoup, and use of APIs.
 
 ## Getting data from Stack Overflow
-Stack Overflow is a question-and-answer website for professional and enthusiast programmers. It features questions and answers on a wide range of topics in computer programming. The website serves as a platform for users to ask and answer questions, and, through membership and active participation, to vote questions and answers up or down similar to Reddit and edit questions and answers in a fashion similar to a wiki. [1] What we want to do with this open-source information is to catch the questions regarding each language and extract also their date of creation, views, answers, and votes.
+Stack Overflow is a question-and-answer website for professional and enthusiast programmers. The website serves as a platform for users to ask and answer questions on a wide range of topics in computer programming, and through membership and active participation, to vote these questions and answers up or down, or just edit them. [1] What we want to do with this open-source information is to catch the questions regarding each language and extract also their date of creation, views, answers, and votes.
 
 The first idea was to get the data from the available Stack Overflow API, but in order to prevent abuse, the API implements a number of throttles and limits the daily requests, which by default is 10,000.[2] In a quick check, the most common coding language has over 2 million questions, so we reach here the first problem. Analyzing possible solutions the idea of web scraping became more and more feasible.
 
@@ -185,7 +185,7 @@ The entries with date '0', see Clean the raw data --> date data, are not include
           file.write(coding_language + ',' + date + ',' + views + ',' + answers + ',' + votes +'\n')
 ```
 
-### 5. Scraping trought a list of coding languages
+### 5. Scraping throught a list of coding languages
 In order to repeat the previously detailed process in each of the desired programming languages, we create a list of elements named `coding_languages`, and using a for/in cycle we extract the date, views, answers, and votes from each question of every coding language.
 
 ```python
