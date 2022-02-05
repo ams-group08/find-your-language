@@ -86,7 +86,7 @@ During the iterations some random questions in one or two programming languages 
 try:
     date_container = container.findAll('span', {'class':'relativetime'})
     date = (date_container[0]['title'])
-    except:
+except:
     date=0
 ```
 
@@ -338,10 +338,46 @@ def scrap_sof():
 scrap_sof()
 
 ```
-### 8. Read a csv file
-In order to read the created csv file, we use the .read function in Pandas. With the print statements, we can get general information about the data frame such as the first and last records, its shape, the name of the columns, and data type.
+### 8. Read a csv files
+As a result, more than ten different csv files were created, some programming languages had a great amount of questions, so the extracted data was separated in smaller periods of time. With the aid of the .read and .concat pandas’ functions, a unique csv document was created. The amount of rows consist of 4.710.240 while the number of columns is originally 5: programming_language, date, views, answers and votes. 
+
+```
+import pandas as pd
+
+df_java1 =pd.read_csv('java2020-2021.csv')
+df_java2 =pd.read_csv('java2018-2019.csv')
+df_java3 =pd.read_csv('java2017-2017.csv')
+frames_java = [df_java1, df_java2, df_java3]
+df_java = pd.concat(frames_java)
+
+df_python1 =pd.read_csv('python2017-2018.csv')
+df_python2 =pd.read_csv('python2019-2019.csv')
+df_python3 =pd.read_csv('python2020-2021.csv')
+frames_python = [df_python1, df_python2, df_python3]
+df_python = pd.concat(frames_python)
+
+df_javascript1 =pd.read_csv('javascript2021-2021.csv')
+df_javascript2 =pd.read_csv('javascript2020-2020.csv')
+df_javascript3 =pd.read_csv('javascript2019-2019.csv')
+df_javascript4 =pd.read_csv('javascript2018-2018.csv')
+df_javascript5 =pd.read_csv('javascript2017-2017.csv')
+frames_javascript = [df_javascript1, df_javascript2, df_javascript3,df_javascript4,df_javascript5]
+df_javascript = pd.concat(frames_javascript)
+
+df_swift = pd.read_csv('swift2017-2021.csv')
+df_csharp = pd.read_csv('c%232017-2021.csv')
+df_c = pd.read_csv('c2017-2021.csv')
+df_php = pd.read_csv('php2017-2021.csv')
+df_typescript = pd.read_csv('typescript2017-2021.csv')
+df_kotlin = pd.read_csv('kotlin2017-2021.csv')
+df_cplusplus = pd.read_csv('c++2017-2021.csv')
+
+frames = [df_swift, df_csharp, df_c, df_php, df_typescript, df_kotlin, df_cplusplus, df_java, df_python, df_javascript ]
+df_coding_languages = pd.concat(frames)
+```
+
+With the print statements, we can get general information about the data frame such as the first and last records, its shape, the name of the columns, and data type.  The amount of rows consist of 4.710.240 while the number of columns is originally 5: programming_language, date, views, answers and votes. 
 ```python
-df_coding_languages = pd.read_csv('codinglanguages.csv')
 print(df_coding_languages)
 print(df_coding_languages.shape)
 print(df_coding_languages.columns)
