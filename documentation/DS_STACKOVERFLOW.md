@@ -80,7 +80,7 @@ date = date_container[0]['title']
 
 >> 2021-12-22 17:14:03Z
 ```
-During the iterations some random questions in one or two programming languages have an unusual structure, meaning not the one Stack Overflow shows. In these cases the string related to 'date' was not readable and the code running happened to be stopped. In order to avoid this, we write the date extract in a try/except block. In case we come across with this random structure, the final date equals 0 and it's not considered in the final print. 
+During the iterations some random questions in one or two programming languages have an unusual structure, meaning not the one Stack Overflow shows. In these cases the string related to 'date' was not parseable and the code running happened to be stopped. In order to avoid this, we write the date extract in a try/except block. In case we come across with this random structure, the final date equals 0 and it's not considered in the final print. 
 
 ```
 try:
