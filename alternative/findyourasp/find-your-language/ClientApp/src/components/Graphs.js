@@ -8,7 +8,7 @@ export class Graphs extends Component {
             <LineChart call="trends/googledata" source="Google Trends" vaxistitle="Popularity"></LineChart>
             <LineChart call="trends/stackoverflow" source="Stackoverflow" vaxistitle="Popularity"></LineChart>
             <LineChart call="trends/github" source="Github" vaxistitle="Percentage"></LineChart>
-            <LineChart call="trends/stackoverflow" source="Reddit" vaxistitle="Popularity"></LineChart>
+            <LineChart call="trends/reddit" source="Reddit" vaxistitle="Popularity"></LineChart>
         </div>;
     }
 }

@@ -17,6 +17,7 @@ namespace find_your_language.Controllers
         private string m_DataFile = Directory.GetCurrentDirectory() + @"\Resources\multiTimeline.csv";
         private string m_DataFile_StackOverflow = Directory.GetCurrentDirectory() + @"\Resources\Date_year_month_sof.csv";
         private string m_DataFile_Github = Directory.GetCurrentDirectory() + @"\Resources\github_language_popularity_year_month.csv";
+        private string m_DataFile_Reddit = Directory.GetCurrentDirectory() + @"\Resources\final-percentages-reddit.csv";
 
         public TrendsController(ILogger<TrendsController> Logger, ICsvProccesor csvProccesor )
         {
@@ -53,6 +54,17 @@ namespace find_your_language.Controllers
             var result = m_CsvProccesor.Reader(m_DataFile_Github);
             return result.PreprateForFrontEnd();
         }
+
+        // GET: api/<TrendsController>
+        [HttpGet("reddit")]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public Result GetReddit()
+        {
+            var result = m_CsvProccesor.Reader(m_DataFile_Reddit);
+            return result.PreprateForFrontEnd();
+        }
+
 
 
         // GET api/<TrendsController>/5
