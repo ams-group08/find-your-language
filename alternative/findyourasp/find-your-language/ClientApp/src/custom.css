@@ -82,6 +82,6 @@ body.dark-mode {
 }
 
 .click:hover{
-  background: #686868 !important;
-  color: lightblue !important;
+  background:gainsboro !important;
+  color: dimgray !important;
 }
