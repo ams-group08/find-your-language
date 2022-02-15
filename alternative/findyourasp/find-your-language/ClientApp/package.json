@@ -21,6 +21,7 @@
     "react-spring": "^9.4.2",
     "reactstrap": "^8.9.0",
     "rimraf": "^2.6.2",
+    "serve": "^13.0.2",
     "use-dark-mode": "^2.3.1",
     "web-vitals": "^0.2.4",
     "workbox-background-sync": "^5.1.3",
