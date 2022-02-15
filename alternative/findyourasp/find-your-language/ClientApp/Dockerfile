@@ -8,4 +8,4 @@ EXPOSE 80
 EXPOSE 8080
 RUN npm run build
 COPY . /src
-CMD ["serve", "-s", "build"]
+CMD ["npm", "start"]
