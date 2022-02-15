@@ -4,6 +4,7 @@ COPY package.json package-lock.json /src/
 ENV NODE_ENV=production
 RUN npm install --production
 COPY . /src
-EXPOSE 44444
+EXPOSE 80
 EXPOSE 8080
-CMD ["npm", "start"]
+RUN npm run build
+CMD ["serve", "-s", "build"]
