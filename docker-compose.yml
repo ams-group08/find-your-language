@@ -1,0 +1,27 @@
+
+version: "3.3"
+services:
+
+  dotnetcore:
+    build:
+      context: ./alternative/findyourasp/Backend
+    ports:
+      - "8080:8080"
+    networks:
+      - backend
+
+  react:
+    build:
+      context: ./alternative/findyourasp/find-your-language/ClientApp
+    ports:
+      - "44444:44444"
+    networks:
+      - backend
+      - frontend
+
+networks:
+  frontend:
+  backend:
+
+volumes:
+  db-data:
