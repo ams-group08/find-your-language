@@ -9,7 +9,10 @@ services:
       - "8080:8080"
     networks:
       - backend
-
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "3"
   react:
     build:
       context: ./alternative/findyourasp/find-your-language/ClientApp
@@ -18,6 +21,10 @@ services:
     networks:
       - backend
       - frontend
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "3"
 
 networks:
   frontend:
