@@ -5,30 +5,10 @@ Created with *create-react-app*. See the [full create-react-app guide](https://g
 Provides an insight on the most popular languages across the web
 
 
-
-Try It
+Run It
 ---
 
-[ams-group08.github.io/find-your-language](https://ams-group08.github.io/find-your-language/)
-
-
-
-Install It
----
-
-`npm install`
-
-
-Use It
----
-
-`npm start`
-
-
-Dev It
----
-
-`npm run dev`
+`docker-compose -p 80:80 up`
 
 
 
