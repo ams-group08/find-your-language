@@ -9,4 +9,5 @@ EXPOSE 8080
 RUN npm run build
 RUN npm install -g serve
 COPY . /src
-CMD ["serve", "-s", "build", "-p", "80"]
+# CMD ["serve", "-s", "build", "-p", "80"]
+CMD ["npm", "start"]
