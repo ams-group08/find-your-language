@@ -35,7 +35,7 @@ export class GraphStackoverflow extends Component {
                         To summarize, this technique allowed us to get from every question, regarding a specific programming language, the date on which it was asked, the votes, the answers and the number of views it got.</p>
                     <SeeOurDocument link="https://github.com/ams-group08/find-your-language/blob/main/documentation/DS_STACKOVERFLOW.md"></SeeOurDocument>
                     <br></br>
-                    <LineChart call="trends/stackoverflow" source="Stackoverflow" vaxistitle="Popularity"></LineChart>
+                    <LineChart call="trends/stackoverflow" source="Stackoverflow" vaxistitle="Popularity Percentage"></LineChart>
                 </div>
                 <br />
                 <div className="col-2">

@@ -29,7 +29,7 @@ export class GraphGithub extends Component {
                     </ul>
                     <SeeOurDocument link="https://github.com/ams-group08/find-your-language/blob/main/documentation/GITHUB.md"></SeeOurDocument>
                     <br></br>
-                    <LineChart call="trends/github" source="Github" vaxistitle="Percentage" ></LineChart>
+                    <LineChart call="trends/github" source="Github" vaxistitle="Popularity Percentage" ></LineChart>
                 </div>
                 <br />
                 <div className="col-2">

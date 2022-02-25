@@ -24,7 +24,7 @@ export class GraphGoogleTrend extends Component {
                         You can explore Google Trends from the top down by visiting the tool and seeing what searches are currently trending, then digging into a topic for more information.
                         You can also enter a search term into the search box at the top of the tool to see how search volume has varied for that term over time and in different locations. You change the location, time frame, category or industry, and type of search (web, news, shopping, or YouTube) for more fine-grained data.</p>
                     <br></br>
-                    <LineChart call="trends/googledata" source="Google Trends" vaxistitle="Popularity"></LineChart>
+                    <LineChart call="trends/googledata" source="Google Trends" vaxistitle="Popularity Percentage"></LineChart>
                     <br></br>
                 </div>
                 <br />
